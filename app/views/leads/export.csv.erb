@@ -1,0 +1,11 @@
+<%- headers = ['ID', 'First name', 'Last name', 'Email', 'Job application ID', 'Job application created at'] -%>
+<%= CSV.generate_line headers %>
+<%- CSV.generate do |csv| -%>
+  <%= @csv_rows.each do { |data| csv << data } -%>
+<%- end -%>
+
+
+  #@csv_string = CSV.generate do |csv|
+ # @csv_rows.map { |data| csv << data }
+#end
+  
