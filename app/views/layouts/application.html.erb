@@ -21,9 +21,11 @@
     padding: 15px;
     font-family: Open Sans, sans-serif;
     letter-spacing: 2px;
+    position: absolute;
+    bottom: 0;
   }
   
-  a {
+  footer a {
     color: rgb(244,63,133);
     font-family: Open Sans, sans-serif;
     letter-spacing: 2px;
@@ -50,20 +52,24 @@
     letter-spacing: 3px;
   }
   
-  button {
+  .home a {
+    color: #FFFFFF;
+    font-family: Open Sans, sans-serif;
+    letter-spacing: 2px;
+    text-decoration: none;
+  }
+  
+  .download-button {
     background-color: #EA4C89;
     border-radius: 8px;
     border-style: none;
     box-sizing: border-box;
     color: #FFFFFF;
     cursor: pointer;
-    display: inline-block;
-    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     font-weight: 500;
     height: 40px;
     line-height: 20px;
-    list-style: none;
     outline: none;
     padding: 10px 16px;
     position: relative;
@@ -73,14 +79,15 @@
     vertical-align: baseline;
     -webkit-user-select: none;
     touch-action: manipulation;
-    display: flex;
+    display: block;
     margin-right: auto;
     margin-left: auto;
-    margin-top: -10px;
+    margin-top: 30px;
+    width: 200px;
   }
   
-  .button-1:hover,
-  .button-1:focus {
+  .download-button:hover,
+  .download-button:focus {
     background-color: #F082AC;
   }
   
