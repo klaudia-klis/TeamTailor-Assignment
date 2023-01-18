@@ -10,16 +10,17 @@ class ApplicationController < ActionController::Base
   def export
     uri = URI('https://api.teamtailor.com/v1/candidates')
     res = Net::HTTP.get_response(uri, {
-      'Authorization' => 'Token token=UN2d6SNd0RoesuGxxAKFVin9UPnNHEAmfhejdZa5', 
+      'Authorization' => 'Token token=' + ENV["TEAMTAILOR_API_KEY"], 
       'X-Api-Version' => '20210218'
     })
     
     @csv_rows = JSON.parse(res.body)["data"].map { |candidate|
       job_application = URI(candidate["relationships"]["job-applications"]["links"]["related"])
       job_application_response = Net::HTTP.get_response(job_application, {
-        'Authorization' => 'Token token=UN2d6SNd0RoesuGxxAKFVin9UPnNHEAmfhejdZa5', 
+        'Authorization' => 'Token token=' + ENV["TEAMTAILOR_API_KEY"], 
         'X-Api-Version' => '20210218'
       })
+      
       puts job_application_response.body
       [ candidate["id"], 
         candidate["attributes"]["first-name"], 
